@@ -24,29 +24,19 @@ class _InputPageState extends State<InputPage> {
               children: <Widget>[
                 Expanded(
                   child: ReusableCard(
-                    cardChild: Column(
-                      mainAxisAlignment: MainAxisAlignment.center,
-                      children: <Widget>[
-                        Icon(
-                          FontAwesomeIcons.mars,
-                          size: 80.0,
-                        ),
-                        SizedBox(
-                          height: 15.0,
-                        ),
-                        Text(
-                          'MALE',
-                          style: TextStyle(
-                            fontSize: 18.0,
-                            color: Color(0xFF8D8E98),
-                          ),
-                        )
-                      ],
+                    cardChild: CardChild(
+                      text: 'MALE',
+                      iconData: FontAwesomeIcons.mars,
                     ),
                   ),
                 ),
                 Expanded(
-                  child: ReusableCard(),
+                  child: ReusableCard(
+                    cardChild: CardChild(
+                      text: 'FEMALE',
+                      iconData: FontAwesomeIcons.venus,
+                    ),
+                  ),
                 ),
               ],
             ),
@@ -79,6 +69,35 @@ class _InputPageState extends State<InputPage> {
           )
         ],
       ),
+    );
+  }
+}
+
+class CardChild extends StatelessWidget {
+  CardChild({this.text, this.iconData});
+  final String text;
+  final IconData iconData;
+
+  @override
+  Widget build(BuildContext context) {
+    return Column(
+      mainAxisAlignment: MainAxisAlignment.center,
+      children: <Widget>[
+        Icon(
+          iconData,
+          size: 80.0,
+        ),
+        SizedBox(
+          height: 15.0,
+        ),
+        Text(
+          text,
+          style: TextStyle(
+            fontSize: 18.0,
+            color: Color(0xFF8D8E98),
+          ),
+        )
+      ],
     );
   }
 }
