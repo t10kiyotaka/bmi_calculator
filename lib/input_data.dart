@@ -17,6 +17,13 @@ class InputPage extends StatefulWidget {
 
 class _InputPageState extends State<InputPage> {
   Gender selectedGender;
+
+  selectGender(Gender gender) {
+    setState(() {
+      selectedGender = gender;
+    });
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -29,34 +36,22 @@ class _InputPageState extends State<InputPage> {
             child: Row(
               children: <Widget>[
                 Expanded(
-                  child: GestureDetector(
-                    onTap: () {
-                      setState(() {
-                        selectedGender = Gender.Male;
-                      });
-                    },
-                    child: ReusableCard(
-                      color: selectedGender == Gender.Male ? activeCardColor : inactiveCardColor,
-                      cardChild: IconContent(
-                        text: 'MALE',
-                        iconData: FontAwesomeIcons.mars,
-                      ),
+                  child: ReusableCard(
+                    onPress: () => selectGender(Gender.Male),
+                    color: selectedGender == Gender.Male ? activeCardColor : inactiveCardColor,
+                    cardChild: IconContent(
+                      text: 'MALE',
+                      iconData: FontAwesomeIcons.mars,
                     ),
                   ),
                 ),
                 Expanded(
-                  child: GestureDetector(
-                    onTap: () {
-                      setState(() {
-                        selectedGender = Gender.Female;
-                      });
-                    },
-                    child: ReusableCard(
-                      color: selectedGender == Gender.Female ? activeCardColor : inactiveCardColor,
-                      cardChild: IconContent(
-                        text: 'FEMALE',
-                        iconData: FontAwesomeIcons.venus,
-                      ),
+                  child: ReusableCard(
+                    onPress: () => selectGender(Gender.Female),
+                    color: selectedGender == Gender.Female ? activeCardColor : inactiveCardColor,
+                    cardChild: IconContent(
+                      text: 'FEMALE',
+                      iconData: FontAwesomeIcons.venus,
                     ),
                   ),
                 ),
