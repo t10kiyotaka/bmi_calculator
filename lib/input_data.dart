@@ -5,7 +5,7 @@ import 'icon_content.dart';
 
 const bottomContainerHeight = 80.0;
 const activeCardColor = Color(0xFF1D1E33);
-const inactiveCardColor = Color(0xFF000000);
+const inactiveCardColor = Color(0xFF12102A);
 const bottomContainerColor = Color(0xFFEB1555);
 
 enum Gender { Male, Female }
@@ -15,20 +15,8 @@ class InputPage extends StatefulWidget {
   _InputPageState createState() => _InputPageState();
 }
 
-var maleColor = activeCardColor;
-var femaleColor = inactiveCardColor;
-
-void _updateColor(Gender gender) {
-  if (gender == Gender.Male) {
-    maleColor = activeCardColor;
-    femaleColor = inactiveCardColor;
-  } else {
-    maleColor = inactiveCardColor;
-    femaleColor = activeCardColor;
-  }
-}
-
 class _InputPageState extends State<InputPage> {
+  Gender selectedGender;
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -44,11 +32,11 @@ class _InputPageState extends State<InputPage> {
                   child: GestureDetector(
                     onTap: () {
                       setState(() {
-                        _updateColor(Gender.Male);
+                        selectedGender = Gender.Male;
                       });
                     },
                     child: ReusableCard(
-                      color: maleColor,
+                      color: selectedGender == Gender.Male ? activeCardColor : inactiveCardColor,
                       cardChild: IconContent(
                         text: 'MALE',
                         iconData: FontAwesomeIcons.mars,
@@ -60,11 +48,11 @@ class _InputPageState extends State<InputPage> {
                   child: GestureDetector(
                     onTap: () {
                       setState(() {
-                        _updateColor(Gender.Female);
+                        selectedGender = Gender.Female;
                       });
                     },
                     child: ReusableCard(
-                      color: femaleColor,
+                      color: selectedGender == Gender.Female ? activeCardColor : inactiveCardColor,
                       cardChild: IconContent(
                         text: 'FEMALE',
                         iconData: FontAwesomeIcons.venus,
