@@ -7,6 +7,8 @@ import '../path.dart';
 class ResultsPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
+    final ScreenArgumentsForResultPage args = ModalRoute.of(context).settings.arguments;
+
     return Scaffold(
       appBar: AppBar(
         title: Text('BMI CALCULATOR'),
@@ -26,15 +28,16 @@ class ResultsPage extends StatelessWidget {
                 mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                 children: <Widget>[
                   Text(
-                    'Normal',
+                    args.result,
                     style: kResultTextStyle,
                   ),
                   Text(
-                    '18.0',
+                    args.bmi,
                     style: kBMITextStyle,
                   ),
                   Text(
-                    'You\'re very normal!',
+                    args.interpretation,
+                    textAlign: TextAlign.center,
                     style: kBodyTextStyle,
                   ),
                 ],
@@ -43,10 +46,20 @@ class ResultsPage extends StatelessWidget {
           ),
           BottomButton(
             buttonText: 'RE-CALCULATE',
-            pathText: Path().home,
+            onTap: () {
+              Navigator.pushNamed(context, Path().home);
+            },
           )
         ],
       ),
     );
   }
+}
+
+class ScreenArgumentsForResultPage {
+  ScreenArgumentsForResultPage({@required this.result, @required this.bmi, @required this.interpretation});
+
+  final String result;
+  final String bmi;
+  final String interpretation;
 }
