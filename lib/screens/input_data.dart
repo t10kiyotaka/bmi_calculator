@@ -1,10 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
-import 'reusable_card.dart';
-import 'icon_content.dart';
-import 'constant.dart';
-import 'bottom_button.dart';
-import 'path.dart';
+import '../components/reusable_card.dart';
+import 'package:bmi_calculator/components/icon_content.dart';
+import '../constant.dart';
+import '../components/bottom_button.dart';
+import '../path.dart';
+import '../components/round_icon_button.dart';
 
 class InputPage extends StatefulWidget {
   @override
@@ -208,28 +209,6 @@ class _InputPageState extends State<InputPage> {
           )
         ],
       ),
-    );
-  }
-}
-
-class RoundIconButton extends StatelessWidget {
-  RoundIconButton({this.icon, this.onPress});
-
-  final IconData icon;
-  final Function onPress;
-
-  @override
-  Widget build(BuildContext context) {
-    return RawMaterialButton(
-      child: Icon(icon),
-      onPressed: onPress,
-      elevation: 6.0,
-      constraints: BoxConstraints.tightFor(
-        width: 56.0,
-        height: 56.0,
-      ),
-      shape: CircleBorder(),
-      fillColor: Color(0xFF4C4C5E),
     );
   }
 }
