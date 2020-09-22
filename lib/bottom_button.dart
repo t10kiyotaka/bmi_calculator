@@ -2,21 +2,22 @@ import 'package:flutter/material.dart';
 import 'constant.dart';
 
 class BottomButton extends StatelessWidget {
-  const BottomButton({
-    Key key,
-  }) : super(key: key);
+  BottomButton({@required this.buttonText, @required this.pathText});
+
+  final String buttonText;
+  final String pathText;
 
   @override
   Widget build(BuildContext context) {
     return GestureDetector(
       onTap: () {
-        Navigator.pushNamed(context, '/result');
+        Navigator.pushNamed(context, pathText);
       },
       child: Container(
         width: double.infinity,
         child: Center(
           child: Text(
-            'CALCULATE',
+            buttonText,
             style: kLargeButtonTextStyle,
           ),
         ),

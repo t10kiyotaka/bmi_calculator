@@ -4,6 +4,7 @@ import 'reusable_card.dart';
 import 'icon_content.dart';
 import 'constant.dart';
 import 'bottom_button.dart';
+import 'path.dart';
 
 class InputPage extends StatefulWidget {
   @override
@@ -201,7 +202,10 @@ class _InputPageState extends State<InputPage> {
               ],
             ),
           ),
-          BottomButton()
+          BottomButton(
+            buttonText: 'CALCULATE',
+            pathText: Path().result,
+          )
         ],
       ),
     );
