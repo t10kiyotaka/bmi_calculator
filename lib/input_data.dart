@@ -3,13 +3,7 @@ import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'reusable_card.dart';
 import 'icon_content.dart';
 import 'constant.dart';
-
-const bottomContainerHeight = 80.0;
-const activeCardColor = Color(0xFF1D1E33);
-const inactiveCardColor = Color(0xFF12102A);
-const bottomContainerColor = Color(0xFFEB1555);
-
-enum Gender { Male, Female }
+import 'bottom_button.dart';
 
 class InputPage extends StatefulWidget {
   @override
@@ -207,23 +201,7 @@ class _InputPageState extends State<InputPage> {
               ],
             ),
           ),
-          GestureDetector(
-            onTap: () {
-              Navigator.pushNamed(context, '/result');
-            },
-            child: Container(
-              width: double.infinity,
-              child: Center(
-                child: Text(
-                  'CALCULATE',
-                  style: kLargeButtonTextStyle,
-                ),
-              ),
-              color: bottomContainerColor,
-              height: bottomContainerHeight,
-              margin: EdgeInsets.only(top: 10.0),
-            ),
-          )
+          BottomButton()
         ],
       ),
     );

@@ -1,5 +1,12 @@
 import 'package:flutter/material.dart';
 
+const bottomContainerHeight = 80.0;
+const activeCardColor = Color(0xFF1D1E33);
+const inactiveCardColor = Color(0xFF12102A);
+const bottomContainerColor = Color(0xFFEB1555);
+
+enum Gender { Male, Female }
+
 const kLabelTextStyle = TextStyle(
   fontSize: 18.0,
   color: Color(0xFF8D8E98),
