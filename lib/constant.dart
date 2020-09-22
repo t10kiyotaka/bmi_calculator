@@ -8,7 +8,7 @@ const bottomContainerColor = Color(0xFFEB1555);
 
 // Height
 
-const bottomContainerHeight = 80.0;
+const bottomContainerHeight = 50.0;
 
 // Enum
 

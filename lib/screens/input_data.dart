@@ -68,15 +68,15 @@ class _InputPageState extends State<InputPage> {
                     cardChild: Column(
                       mainAxisAlignment: MainAxisAlignment.center,
                       children: <Widget>[
-                        Text(
-                          'HEIGHT',
-                          style: kLabelTextStyle,
-                        ),
                         Row(
                           mainAxisAlignment: MainAxisAlignment.center,
                           crossAxisAlignment: CrossAxisAlignment.baseline,
                           textBaseline: TextBaseline.alphabetic,
                           children: <Widget>[
+                            Text(
+                              'HEIGHT',
+                              style: kLabelTextStyle,
+                            ),
                             Text(
                               height.toString(),
                               style: kNumberTextStyle,
@@ -125,13 +125,18 @@ class _InputPageState extends State<InputPage> {
                     cardChild: Column(
                       mainAxisAlignment: MainAxisAlignment.center,
                       children: <Widget>[
-                        Text(
-                          'WEIGHT',
-                          style: kLabelTextStyle,
-                        ),
-                        Text(
-                          weight.toString(),
-                          style: kNumberTextStyle,
+                        Row(
+                          mainAxisAlignment: MainAxisAlignment.center,
+                          children: <Widget>[
+                            Text(
+                              'WEIGHT',
+                              style: kLabelTextStyle,
+                            ),
+                            Text(
+                              weight.toString(),
+                              style: kNumberTextStyle,
+                            ),
+                          ],
                         ),
                         Row(
                           mainAxisAlignment: MainAxisAlignment.center,
@@ -166,13 +171,18 @@ class _InputPageState extends State<InputPage> {
                     cardChild: Column(
                       mainAxisAlignment: MainAxisAlignment.center,
                       children: <Widget>[
-                        Text(
-                          'AGE',
-                          style: kLabelTextStyle,
-                        ),
-                        Text(
-                          age.toString(),
-                          style: kNumberTextStyle,
+                        Row(
+                          mainAxisAlignment: MainAxisAlignment.center,
+                          children: <Widget>[
+                            Text(
+                              'AGE',
+                              style: kLabelTextStyle,
+                            ),
+                            Text(
+                              age.toString(),
+                              style: kNumberTextStyle,
+                            ),
+                          ],
                         ),
                         Row(
                           mainAxisAlignment: MainAxisAlignment.center,
